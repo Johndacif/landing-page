@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page with Sliding Background</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+        }
+
+        .slider-container {
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .slider {
+            display: flex;
+            height: 100%;
+            animation: slideAnimation 12s infinite; /* Control slide duration */
+        }
+
+        .slide {
+            flex: 1;
+            min-width: 100%;
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .slide-1 {
+            background-image: url('images/Home.jpg'); /* First image */
+        }
+
+        .slide-2 {
+            background-image: url('images/Testimonials.jpg'); /* Second image */
+        }
+
+        .slide-3 {
+            background-image: url('images/Contact Us.jpg'); /* Third image */
+        }
+
+        /* Slide Animation */
+        @keyframes slideAnimation {
+            0% { transform: translateX(0); }
+            33% { transform: translateX(0); }
+            38% { transform: translateX(-100%); }
+            71% { transform: translateX(-100%); }
+            76% { transform: translateX(-200%); }
+            100% { transform: translateX(-200%); }
+        }
+
+        /* Optional: Text over Slide */
+        .hero-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            font-size: 2.5em;
+            z-index: 1;
+            animation: fadeInText 2s ease-in-out;
+        }
+
+        @keyframes fadeInText {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="slider-container">
+    <div class="slider">
+        <div class="slide slide-1"></div> <!-- Image 1 -->
+        <div class="slide slide-2"></div> <!-- Image 2 -->
+        <div class="slide slide-3"></div> <!-- Image 3 -->
+    </div>
+
+    <div class="hero-text">
+    </div>
+</div>
+
+</body>
+</html>
